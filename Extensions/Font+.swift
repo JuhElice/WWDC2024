@@ -9,11 +9,11 @@ import SwiftUI
 
 extension Font {
     public static var borelGrande: Font { get {
-        Font.custom("Borel-Regular", size: 30)
+        Font.custom("Borel-Regular", size: 60)
     }}
     
     public static var borelPequena: Font { get {
-        Font.custom("Borel-Regular", size: 12)
+        Font.custom("Borel-Regular", size: 18)
     }}
 }
 
