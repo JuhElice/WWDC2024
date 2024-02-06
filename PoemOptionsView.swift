@@ -12,13 +12,19 @@ struct PoemOptionsView: View {
     let poem: PoemOption
     
     var body: some View {
-        VStack (alignment: .leading) {
-            Image(systemName: poem.icon)
-            Text("aaaa")
-                .font(.borelPequena)
+        ZStack {
+            Color(.orange)
                 
-            
+            VStack (alignment: .leading) {
+                Image(systemName: poem.icon)
+                Text("aaaa")
+                    .font(.borelPequena)
+                
+            }
+            .frame(maxWidth: .infinity)
+            .background(.white)
         }
+        .cornerRadius(32)
     }
 }
 

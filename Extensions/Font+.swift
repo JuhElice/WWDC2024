@@ -13,7 +13,7 @@ extension Font {
     }}
     
     public static var borelPequena: Font { get {
-        Font.custom("Borel-Regular", size: 18)
+        Font.custom("Borel-Regular", size: 24)
     }}
 }
 

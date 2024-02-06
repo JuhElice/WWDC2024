@@ -10,11 +10,11 @@ import PencilKit
 
 struct WritingCanva: UIViewRepresentable {
     
-    let ink = PKInkingTool(.pen, color: .black)
     let eraser = PKEraserTool(.bitmap)
     
     @Binding var canvas: PKCanvasView
     @Binding var isDraw: Bool
+    @Binding var ink: PKInkingTool
     
     
     func makeUIView(context: Context) -> PKCanvasView {
@@ -22,16 +22,14 @@ struct WritingCanva: UIViewRepresentable {
         canvas.isOpaque = false
         canvas.drawingPolicy = .anyInput
         canvas.tool = isDraw ? ink: eraser
+        
         return canvas
     }
     
     func updateUIView(_ uiView: PKCanvasView, context: Context) {
         uiView.tool = isDraw ? ink: eraser
+        
     }
 } 
-
-//#Preview {
-//    WritingCanva(canvas: Canvas, isDraw: false)
-//}
 
 
