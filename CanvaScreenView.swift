@@ -84,18 +84,18 @@ struct CanvaScreenView: View {
                     
                     Spacer()
                     
-                    VStack (spacing: 32) {
-                        ForEach(["teus olhos são meus livros", "que livro há aí melhor", "em que melhor se leia", "a página do amor?"], id: \.self) { line in
+                    VStack (spacing: 40) {
+                        ForEach(["Teuq glhos são meus livros.", "Que livro há aí melhor,", "em que melhor se leia", "a página do amor?"], id: \.self) { line in
                             Text(line)
-                                .font(.borelGrande)
+                                .font(.memimaGrande)
                                 .multilineTextAlignment(.center)
-                                .opacity(isTextHidden ? 0 : 0.1)
+                                .opacity(isTextHidden ? 0 : 0.2)
                                 .frame(maxWidth: .infinity)
                                 .overlay(ZStack{
-                                    Divider()
-                                    Divider().offset(x: 0, y: 30)
-                                    Divider().offset(x: 0, y: -30)
-                                    Divider().offset(x: 0, y: -60)
+                                    Divider().offset(y: 15)
+                                    Divider().offset(x: 0, y: 50)
+                                    Divider().offset(x: 0, y: -9)
+                                    Divider().offset(x: 0, y: -40)
                                 } .opacity(isLineHidden ? 0 : 1))
                         } /// ForEach
                     } /// Third VStack

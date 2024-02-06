@@ -15,5 +15,9 @@ extension Font {
     public static var borelPequena: Font { get {
         Font.custom("Borel-Regular", size: 24)
     }}
+    
+    public static var memimaGrande: Font { get {
+        Font.custom("MeMima", size: 60)
+    }}
 }
 

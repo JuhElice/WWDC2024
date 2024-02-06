@@ -4,12 +4,15 @@ import SwiftUI
 struct MyApp: App {
     
     init() {
-    try! UIFont.registerFonts(withExtension: "ttf")
-    }
-    
-    var body: some Scene {
-        WindowGroup {
-            CanvaScreenView()
+        do {
+            try UIFont.registerFonts(withExtension: "ttf")
+        } catch {
+            print(error)
         }
     }
-}
+        var body: some Scene {
+            WindowGroup {
+                CanvaScreenView()
+            }
+        }
+    }
