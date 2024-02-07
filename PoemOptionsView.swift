@@ -14,6 +14,9 @@ struct PoemOptionsView: View {
     var body: some View {
         ZStack {
             Color(.orange)
+            Image("brazilianSky")
+                .resizable()
+                .scaledToFill()
                 
             VStack (alignment: .leading) {
                 Image(systemName: poem.icon)
