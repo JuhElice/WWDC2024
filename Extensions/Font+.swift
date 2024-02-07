@@ -8,16 +8,22 @@
 import SwiftUI
 
 extension Font {
-    public static var borelGrande: Font { get {
+    public static var borelBig: Font { get {
         Font.custom("Borel-Regular", size: 60)
     }}
     
-    public static var borelPequena: Font { get {
+    public static var borelSmall: Font { get {
         Font.custom("Borel-Regular", size: 24)
     }}
     
-    public static var memimaGrande: Font { get {
-        Font.custom("MeMima", size: 60)
+    public static var memimaBig: Font { get {
+        Font.custom("MeMima", size: 90)
     }}
+    
+    public static var memimaSmall: Font { get {
+        Font.custom("MeMima", size: 40)
+    }}
+    
+    
 }
 

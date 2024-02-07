@@ -15,7 +15,7 @@ struct CanvaScreenView: View {
     @State var isDraw = true
     @State private var isTextHidden = false
     @State private var isLineHidden = false
-    @State var ink = PKInkingTool(.pen, color: .black, width: CGFloat(10))
+    @State var ink = PKInkingTool(.pen, color: .black, width: CGFloat(4))
     
     var body: some View {
         VStack {
@@ -78,16 +78,16 @@ struct CanvaScreenView: View {
             
             ZStack {
                 VStack (alignment: .center){
-                    Text("teus olhos são meus livros \n que livro há aí melhor \n em que melhor se leia \n a página do amor?")
-                        .font(.borelPequena)
+                    Text("Teus olhos são meus livros. \n Que livro há aí melhor, \n em que melhor se leia \n a página do amor?")
+                        .font(.memimaSmall)
                         .multilineTextAlignment(.center)
                     
                     Spacer()
                     
                     VStack (spacing: 40) {
-                        ForEach(["Teuq glhos são meus livros.", "Que livro há aí melhor,", "em que melhor se leia", "a página do amor?"], id: \.self) { line in
+                        ForEach(["Teus olhos são meus livros.", "Que livro há aí melhor,", "em que melhor se leia", "a página do amor?"], id: \.self) { line in
                             Text(line)
-                                .font(.memimaGrande)
+                                .font(.memimaBig)
                                 .multilineTextAlignment(.center)
                                 .opacity(isTextHidden ? 0 : 0.2)
                                 .frame(maxWidth: .infinity)

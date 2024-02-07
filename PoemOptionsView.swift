@@ -18,7 +18,7 @@ struct PoemOptionsView: View {
             VStack (alignment: .leading) {
                 Image(systemName: poem.icon)
                 Text("aaaa")
-                    .font(.borelPequena)
+                    .font(.borelSmall)
                 
             }
             .frame(maxWidth: .infinity)
