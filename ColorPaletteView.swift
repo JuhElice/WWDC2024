@@ -14,14 +14,14 @@ struct ColorPalette: View {
     
     var body: some View {
         
-        HStack(spacing: 20) {
+        HStack(spacing: 12) {
             ForEach(colors, id: \.self) { color in
                 Button(action: {
                     self.selectedColor = color
                 }) {
                     Circle()
                         .fill(color)
-                        .frame(width: 50, height: 50)
+                        .frame(width: 40, height: 40)
                         .overlay(
                             Circle()
                                 .stroke(Color.black, lineWidth: self.selectedColor == color ? 3 : 0)

@@ -28,8 +28,7 @@ struct WritingCanva: UIViewRepresentable {
     
     func updateUIView(_ uiView: PKCanvasView, context: Context) {
         uiView.tool = isDraw ? ink: eraser
-        
     }
-} 
+} /// struct
 
 

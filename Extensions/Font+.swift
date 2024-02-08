@@ -17,7 +17,7 @@ extension Font {
     }}
     
     public static var memimaBig: Font { get {
-        Font.custom("MeMima", size: 90)
+        Font.custom("MeMima", size: 80)
     }}
     
     public static var memimaSmall: Font { get {
