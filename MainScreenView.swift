@@ -11,25 +11,30 @@ struct MainScreenView: View {
 
     var body: some View {
         NavigationStack {
-            VStack (alignment: .leading) {
-                Text("Select the poem to practice writing").bold()
-                    .font(.system(size: 48, design: .rounded))
-                    .foregroundColor(Color("black"))
-                    .padding(48)
+            ZStack {
+                Color("lightBlue")
                 
-                ScrollView {
-                    LazyVGrid (columns: [GridItem(),GridItem()]) {
-                        ForEach(PoemOption.listOfPoems) { poem in
-                            NavigationLink {
-                                CanvaScreenView(poem: poem)
-                            } label: {
-                                PoemOptionsView(poem: poem)
+                VStack (alignment: .leading) {
+                    Text("Select the poem to practice writing").bold()
+                        .font(.system(size: 48, design: .rounded))
+                        .foregroundColor(Color("black"))
+                        .padding(48)
+                    
+                    ScrollView {
+                        LazyVGrid (columns: [GridItem(),GridItem()]) {
+                            ForEach(PoemOption.listOfPoems) { poem in
+                                NavigationLink {
+                                    CanvaScreenView(poem: poem)
+                                } label: {
+                                    PoemOptionsView(poem: poem)
+                                }
                             }
                         }
+                        .padding(.horizontal, 40)
                     }
-                    .padding(.horizontal, 40)
                 }
             }
+            .ignoresSafeArea()
         }
     }
 }

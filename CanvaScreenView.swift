@@ -24,6 +24,23 @@ struct CanvaScreenView: View {
         NavigationStack {
             VStack {
                 HStack (alignment: .top) {
+                    
+                    Button(action: {
+                        
+                    }, label: {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 32, weight: .bold))
+                            .foregroundColor(.gray)
+                            .padding()
+                            .frame(width: 60, height: 60)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 40)
+                                    .stroke(Color("lightBlue"), lineWidth: 10))
+                            .background(.white)
+                            .cornerRadius(40)
+//                            .shadow(radius: 10)
+                    })
+                    
                     Button(action: {
                         isDraw.toggle()
                     }, label: {
@@ -32,16 +49,22 @@ struct CanvaScreenView: View {
                             .foregroundColor(.gray)
                             .padding()
                             .frame(width: 60, height: 60)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 40)
+                                    .stroke(Color("lightBlue"), lineWidth: 10))
                             .background(.white)
                             .cornerRadius(40)
-                            .shadow(radius: 10)
+//                            .shadow(radius: 10)
                     }) /// Eraser button
                     
                     ColorPalette(selectedColor: $selectedColor)
                         .frame(width: 390, height: 60)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 40)
+                                .stroke(Color("lightBlue"), lineWidth: 10))
                         .background(.white)
                         .cornerRadius(40)
-                        .shadow(radius: 10)
+//                        .shadow(radius: 10)
                     
                     
                     Button(action: {
@@ -95,7 +118,7 @@ struct CanvaScreenView: View {
                 
                 ZStack {
                     VStack (alignment: .center){
-
+                        
                         VStack (spacing: 10) {
                             ForEach(isTranslated ? poem.translation : poem.poem, id: \.self) { line in
                                 Text(line)
