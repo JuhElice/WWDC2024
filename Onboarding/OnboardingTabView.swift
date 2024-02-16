@@ -14,9 +14,10 @@ struct OnboardingTabView: View {
                 .ignoresSafeArea()
             
             TabView {
-//                Onboarding1View()
-//                Onboarding2View()
-//                Onboarding3View()
+                Onboarding1View()
+                Onboarding2View()
+                Onboarding3View()
+                Onboarding4View()
             }
         }
         .tabViewStyle(PageTabViewStyle())

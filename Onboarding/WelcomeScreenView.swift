@@ -9,14 +9,22 @@ import SwiftUI
 
 struct WelcomeScreenView: View {
     var body: some View {
-        ZStack {
-            Color("green")
-            Circle()
-                .foregroundColor(.white)
-                .opacity(0.5)
-                .frame(width: 600)
+        NavigationStack {
+            ZStack {
+                Color("green")
+                Circle()
+                    .foregroundColor(.white)
+                    .opacity(0.5)
+                    .frame(width: 600)
+                
+                NavigationLink {
+                    OnboardingTabView()
+                } label: {
+                    Text("Start")
+                }
+            }
+            .ignoresSafeArea()
         }
-        .ignoresSafeArea()
     }
 }
 
