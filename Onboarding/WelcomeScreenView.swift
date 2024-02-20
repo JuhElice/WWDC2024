@@ -18,7 +18,7 @@ struct WelcomeScreenView: View {
                     .frame(width: 600)
                 
                 NavigationLink {
-                    OnboardingTabView()
+                    
                 } label: {
                     Text("Start")
                 }
