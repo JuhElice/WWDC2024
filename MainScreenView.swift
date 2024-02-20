@@ -13,12 +13,21 @@ struct MainScreenView: View {
         NavigationStack {
             ZStack {
                 Color("lightBlue")
-                
-                VStack (alignment: .leading) {
-                    Text("Select the poem to practice writing").bold()
-                        .font(.system(size: 48, design: .rounded))
-                        .foregroundColor(Color("black"))
-                        .padding(48)
+                VStack {
+                    Text("Select a poem").bold()
+                        .font(.system(size: 52, design: .rounded))
+                        .foregroundColor(Color("darkBlue"))
+                        .padding(.horizontal, 12)
+                        .padding(.horizontal, 48)
+                        
+                    
+                    Text("and start practicing your writing!")
+                        .font(.system(size: 24, design: .rounded))
+                        .foregroundColor(Color("darkBlue"))
+                        .padding(.horizontal, 12)
+                        .padding(.horizontal, 48)
+                        .padding(.bottom, 48)
+                       
                     
                     ScrollView {
                         LazyVGrid (columns: [GridItem(),GridItem()]) {
@@ -30,12 +39,21 @@ struct MainScreenView: View {
                                 }
                             }
                         }
-                        .padding(.horizontal, 40)
+                        .padding(.horizontal, 24)
+                        .padding(.top, 24)
                     }
+                    .background(.white)
+                    .clipShape(
+                        .rect(
+                            topLeadingRadius: 72,
+                            topTrailingRadius: 72
+                        ))
                 }
+                .padding(.top, 64)
             }
             .ignoresSafeArea()
         }
+        .navigationBarBackButtonHidden()
     }
 }
 

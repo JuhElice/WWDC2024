@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct OnboardingTabView: View {
     var body: some View {
         ZStack {
@@ -25,6 +26,7 @@ struct OnboardingTabView: View {
         .edgesIgnoringSafeArea(.all)
     }
 }
+
 
 #Preview {
     OnboardingTabView()

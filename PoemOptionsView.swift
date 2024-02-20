@@ -12,12 +12,12 @@ struct PoemOptionsView: View {
     let poem: PoemOption
     
     var body: some View {
-        ZStack {
+        ZStack (alignment: .leading) {
             Image(poem.illustration)
                 .resizable()
                 .scaledToFill()
                 
-            VStack {
+            VStack (alignment: .leading) {
                 Spacer()
                 VStack (alignment: .leading) {
                     Text(poem.title)
@@ -32,11 +32,11 @@ struct PoemOptionsView: View {
                 .padding()
                 .background(.white)
                 .opacity(0.9)
-                .cornerRadius(16)
+                .cornerRadius(24)
                 .padding(16)
             }
         }
-        .cornerRadius(32)
+        .cornerRadius(40)
         .padding(8)
     }
 }

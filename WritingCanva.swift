@@ -21,7 +21,7 @@ struct WritingCanva: UIViewRepresentable {
         canvas.backgroundColor = .clear
         canvas.isOpaque = false
         canvas.drawingPolicy = .anyInput
-        canvas.tool = isDraw ? ink: eraser
+        canvas.tool = isDraw ? ink : eraser
         
         return canvas
     }

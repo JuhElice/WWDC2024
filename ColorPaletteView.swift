@@ -24,10 +24,8 @@ struct ColorPalette: View {
                         .frame(width: 40, height: 40)
                         .overlay(
                             Circle()
-                                .stroke(Color.black, lineWidth: self.selectedColor == color ? 3 : 0)
-                        )
+                                .stroke(Color.black, lineWidth: self.selectedColor == color ? 3 : 0))
                 }
-                
             } /// forEach
         } /// HStack
     }

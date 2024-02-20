@@ -25,9 +25,9 @@ struct CanvaScreenView: View {
             VStack {
                 HStack (alignment: .top) {
                     
-                    Button(action: {
-                        
-                    }, label: {
+                    NavigationLink {
+                        MainScreenView()
+                    } label: {
                         Image(systemName: "chevron.left")
                             .font(.system(size: 32, weight: .bold))
                             .foregroundColor(.gray)
@@ -38,8 +38,7 @@ struct CanvaScreenView: View {
                                     .stroke(Color("lightBlue"), lineWidth: 10))
                             .background(.white)
                             .cornerRadius(40)
-//                            .shadow(radius: 10)
-                    })
+                    } /// back to the main screen
                     
                     Button(action: {
                         isDraw.toggle()
@@ -54,17 +53,15 @@ struct CanvaScreenView: View {
                                     .stroke(Color("lightBlue"), lineWidth: 10))
                             .background(.white)
                             .cornerRadius(40)
-//                            .shadow(radius: 10)
                     }) /// Eraser button
                     
                     ColorPalette(selectedColor: $selectedColor)
-                        .frame(width: 390, height: 60)
+                        .frame(width: 380, height: 60)
                         .overlay(
                             RoundedRectangle(cornerRadius: 40)
                                 .stroke(Color("lightBlue"), lineWidth: 10))
                         .background(.white)
                         .cornerRadius(40)
-//                        .shadow(radius: 10)
                     
                     
                     Button(action: {
@@ -76,11 +73,14 @@ struct CanvaScreenView: View {
                             .opacity(self.isTextHidden == false ? 1 : 0.2)
                             .padding()
                             .frame(width: 60, height: 60)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 40)
+                                    .stroke(Color("lightBlue"), lineWidth: 10))
                             .background(.white)
                             .cornerRadius(40)
-                            .shadow(radius: 10)
-                        
                     }) /// Hide Tip Text buttom
+                    
+                    
                     
                     Button(action: {
                         isLineHidden.toggle()
@@ -91,9 +91,11 @@ struct CanvaScreenView: View {
                             .opacity(self.isLineHidden == false ? 1 : 0.2)
                             .padding()
                             .frame(width: 60, height: 60)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 40)
+                                    .stroke(Color("lightBlue"), lineWidth: 10))
                             .background(.white)
                             .cornerRadius(40)
-                            .shadow(radius: 10)
                     }) /// Hide Line Guide buttom
                     
                     
@@ -106,9 +108,11 @@ struct CanvaScreenView: View {
                             .opacity(self.isTranslated == false ? 1 : 0.2)
                             .padding()
                             .frame(width: 60, height: 60)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 40)
+                                    .stroke(Color("lightBlue"), lineWidth: 10))
                             .background(.white)
                             .cornerRadius(40)
-                            .shadow(radius: 10)
                     })
                 } /// Hstack
                 .padding(.horizontal, 32)
@@ -140,9 +144,9 @@ struct CanvaScreenView: View {
                                     .frame(maxWidth: .infinity)
                                     .overlay(ZStack{
                                         Divider().offset(y: 15)
-                                        Divider().offset(x: 0, y: 50)
-                                        Divider().offset(x: 0, y: -9)
-                                        Divider().offset(x: 0, y: -40)
+                                        Divider().offset(x: 0, y: 43)
+                                        Divider().offset(x: 0, y: -7)
+                                        Divider().offset(x: 0, y: -34)
                                     } .opacity(isLineHidden ? 0 : 1))
                             } /// ForEach
                         } /// Third VStack
@@ -157,19 +161,21 @@ struct CanvaScreenView: View {
                     
                 } /// ZStack
                 
-                Button(action: {
-                    
-                }, label: {
-                    Text("Finish")
+                NavigationLink {
+                    ResultScreenView(canvas: canvas)
+                } label: {
+                    Text("See your result")
                         .font(.system(size: 32, weight: .bold))
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color("darkBlue"))
                         .padding()
-                        .frame(width: 200, height: 70)
-                        .background(.white)
+                        .frame(width: 300, height: 70)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 40)
+                                .stroke(Color("lightBlue"), lineWidth: 10))
+                        .background(Color("lightBlue"))
                         .cornerRadius(40)
-                        .shadow(radius: 10)
                         .padding(.bottom, 32)
-                })
+                }
             } /// VStack
             .onChange(of: selectedColor) { newValue in
                 ink.color = UIColor(newValue)
