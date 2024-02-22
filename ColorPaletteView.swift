@@ -21,7 +21,7 @@ struct ColorPalette: View {
                 }) {
                     Circle()
                         .fill(color)
-                        .frame(width: 40, height: 40)
+                        .frame(width: 30, height: 30)
                         .overlay(
                             Circle()
                                 .stroke(Color.black, lineWidth: self.selectedColor == color ? 3 : 0))

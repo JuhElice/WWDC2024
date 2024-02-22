@@ -8,19 +8,19 @@ import PackageDescription
 import AppleProductTypes
 
 let package = Package(
-    name: "WWDC2024",
+    name: "Poetic Pen",
     platforms: [
         .iOS("16.0")
     ],
     products: [
         .iOSApplication(
-            name: "WWDC2024",
+            name: "Poetic Pen",
             targets: ["AppModule"],
             bundleIdentifier: "Julia-Elice-Jurczyszyn.WWDC2024",
             teamIdentifier: "N2ZGM99G4M",
             displayVersion: "1.0",
             bundleVersion: "1",
-            appIcon: .placeholder(icon: .gift),
+            appIcon: .asset("AppIcon"),
             accentColor: .presetColor(.pink),
             supportedDeviceFamilies: [
                 .pad,

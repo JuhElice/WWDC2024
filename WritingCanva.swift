@@ -22,6 +22,7 @@ struct WritingCanva: UIViewRepresentable {
         canvas.isOpaque = false
         canvas.drawingPolicy = .anyInput
         canvas.tool = isDraw ? ink : eraser
+        canvas.drawingGestureRecognizer.isEnabled = true
         
         return canvas
     }

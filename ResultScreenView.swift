@@ -11,7 +11,7 @@ import PencilKit
 struct ResultScreenView: View {
     
     let canvas: PKCanvasView
-    @Environment (\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationStack {
@@ -29,13 +29,13 @@ struct ResultScreenView: View {
                             presentationMode.wrappedValue.dismiss()
                         } label: {
                             Text("Write this poem again")
-                                .font(.system(size: 32, weight: .bold))
+                                .font(.system(size: 24, design: .rounded))
                                 .foregroundColor(Color("darkBlue"))
                                 .padding()
-                                .frame(width: 400, height: 70)
+                                .frame(width: 300, height: 50)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 40)
-                                        .stroke(Color("lightBlue"), lineWidth: 10))
+                                        .stroke(Color("lightBlue"), lineWidth: 6))
                                 .background(.white)
                                 .cornerRadius(40)
                                 
@@ -45,16 +45,12 @@ struct ResultScreenView: View {
                             MainScreenView()
                         } label: {
                             Text("Practice another poem")
-                                .font(.system(size: 32, weight: .bold))
+                                .font(.system(size: 24, design: .rounded)).bold()
                                 .foregroundColor(Color("darkBlue"))
                                 .padding()
-                                .frame(width: 400, height: 70)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 40)
-                                        .stroke(Color("lightBlue"), lineWidth: 10))
+                                .frame(width: 300, height: 50)
                                 .background(Color("lightBlue"))
                                 .cornerRadius(40)
-                               
                         }
                     }
                 }

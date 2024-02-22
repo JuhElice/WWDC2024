@@ -11,16 +11,30 @@ struct WelcomeScreenView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color("green")
-                Circle()
-                    .foregroundColor(.white)
-                    .opacity(0.5)
-                    .frame(width: 600)
+                Color("lightBlue")
+                    .ignoresSafeArea()
                 
-                NavigationLink {
+                VStack {
+                    Spacer()
+                    Image("poeticPen")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 500)
+                        .offset(x: 40)
                     
-                } label: {
-                    Text("Start")
+                    Spacer()
+                    
+                    NavigationLink {
+                        Onboarding1View()
+                    } label: {
+                        Text("Start")
+                            .font(.system(size: 32, design: .rounded)).bold()
+                            .foregroundColor(.white)
+                            .frame(width: 280, height: 70)
+                            .background(Color("darkBlue"))
+                            .cornerRadius(40)
+                    }
+                    Spacer()
                 }
             }
             .ignoresSafeArea()
