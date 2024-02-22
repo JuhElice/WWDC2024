@@ -24,7 +24,7 @@ struct Onboarding4View: View {
                     ZStack {
                         Rectangle()
                             .frame(width: 500, height: 500)
-                            .foregroundColor(Color("lightBlue"))
+                            .foregroundColor(Color("purple"))
                             .cornerRadius(40)
                             .offset(y: -50)
                         
@@ -48,7 +48,7 @@ struct Onboarding4View: View {
                         }
                     }
                     
-                    Text("In this way, Poetic Pen combines learning to write with poems by one of the most famous Brazilian writers, Machado de Assis, to inspire children to learn culture by practicing writing the portuguese language.")
+                    Text("In this way, Poetic Pen combines learning to write with poems by one of the most famous Brazilian writer, Machado de Assis, to inspire children to learn culture by practicing writing the portuguese language.")
                         .font(.system(size: 32, design: .rounded)).bold()
                         .multilineTextAlignment(.center)
                         .foregroundColor(Color("darkBlue"))
@@ -81,8 +81,9 @@ struct Onboarding4View: View {
                                 .cornerRadius(40)
                         }
                     } /// HStack Botton buttons
-                    .padding(.vertical, 64)
+                    .padding(.top, 32)
                 } /// VStack
+                .padding(.vertical, 80)
             } /// zstack
         }/// Navigation stack
         .navigationBarBackButtonHidden()

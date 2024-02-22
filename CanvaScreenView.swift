@@ -14,7 +14,7 @@ struct CanvaScreenView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var showingPopover = true
+    @State var showingPopover = true
     @State private var selectedColor = Color.black
     @State var canvas = PKCanvasView()
     @State var isDraw = true
@@ -142,10 +142,10 @@ struct CanvaScreenView: View {
                                         .opacity(isTextHidden ? 0 : 0.2)
                                         .frame(maxWidth: .infinity)
                                         .overlay(ZStack{
-                                            Divider().offset(y: 15)
-                                            Divider().offset(x: 0, y: 43)
-                                            Divider().offset(x: 0, y: -7)
-                                            Divider().offset(x: 0, y: -34)
+                                            Divider().offset(y: 13)
+                                            Divider().offset(x: 0, y: 40)
+                                            Divider().offset(x: 0, y: -6)
+                                            Divider().offset(x: 0, y: -32)
                                         } .opacity(isLineHidden ? 0 : 1))
                                 } /// ForEach
                             } /// Third VStack
@@ -180,14 +180,14 @@ struct CanvaScreenView: View {
                     ink.color = UIColor(newValue)
                 } /// onChange
                 
-                .popover(isPresented: $showingPopover,  content: {
-                        VStack {
-                            Text("Use the Apple Pencil to write")
-                                .font(.system(size: 24, design: .rounded)).bold()
-                                .foregroundColor(Color("darkBlue"))
-                                .padding(32)
-                        }
-                    }) /// popOver
+                    .popover(isPresented: $showingPopover,  content: {
+                            VStack {
+                                Text("Use the Apple Pencil to write")
+                                    .font(.system(size: 32, design: .rounded)).bold()
+                                    .foregroundColor(Color("darkBlue"))
+                                    .padding(64)
+                            }
+                        }) /// popOver
             } /// zstack
         } /// navigation stack
         .navigationBarBackButtonHidden()
@@ -195,5 +195,5 @@ struct CanvaScreenView: View {
 }
 
 #Preview {
-    CanvaScreenView(poem: PoemOption(title: "When she speaks", source: "Falenas, 1870", illustration: "brazilianSky", poem: ["Quando ela fala, parece", "Que a voz da brisa se cala;", "Talvez um anjo emudece", "Quando ela fala."], translation: ["When she speaks, it seems", "That the voice of the breeze is silent;", "Perhaps an angel becomes silent", "when she speaks."]))
+    CanvaScreenView(poem: PoemOption(title: "When she speaks", source: "Falenas, 1870", illustration: "brazilianSky", poem: ["Quagdo ela fala, parece", "Que a voz da brisa se cala;", "Talvez um anjo emudece", "Quando ela fala."], translation: ["When she speaks, it seems", "That the voice of the breeze is silent;", "Perhaps an angel becomes silent", "when she speaks."]))
 }

@@ -23,7 +23,7 @@ struct Onboarding3View: View {
                     ZStack {
                         Rectangle()
                             .frame(width: 500, height: 500)
-                            .foregroundColor(Color("lightBlue"))
+                            .foregroundColor(Color("green"))
                             .cornerRadius(40)
                             .offset(y: -100)
                         
@@ -80,8 +80,9 @@ struct Onboarding3View: View {
                                 .cornerRadius(40)
                         }
                     } /// HStack Botton buttons
-                    .padding(.vertical, 64)
+                    .padding(.top, 32)
                 } /// VStack
+                .padding(.vertical, 80)
             } /// zstack
         } /// Navigation stack
         .navigationBarBackButtonHidden()

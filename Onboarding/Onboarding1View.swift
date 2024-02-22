@@ -17,13 +17,12 @@ struct Onboarding1View: View {
             ZStack {
                 Color(.white)
                     .ignoresSafeArea()
-                
                 VStack {
                     Spacer()
                     ZStack {
                         Rectangle()
                             .frame(width: 500, height: 500)
-                            .foregroundColor(Color("lightBlue"))
+                            .foregroundColor(Color("yellow"))
                             .cornerRadius(40)
                             .offset(y: -100)
                         
@@ -70,8 +69,9 @@ struct Onboarding1View: View {
                                 .cornerRadius(40)
                         }
                     } /// HStack Botton buttons
-                    .padding(.vertical, 64)
+                    .padding(.top, 32)
                 } /// VStack
+                .padding(.vertical, 80)
             } /// zstack
         } /// Navigation stack
      .navigationBarBackButtonHidden()
