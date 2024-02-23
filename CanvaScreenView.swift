@@ -25,6 +25,7 @@ struct CanvaScreenView: View {
     var body: some View {
         NavigationStack {
             ZStack {
+               
                 Color(.white)
                     .ignoresSafeArea()
                 VStack {
@@ -168,9 +169,6 @@ struct CanvaScreenView: View {
                             .foregroundColor(Color("darkBlue"))
                             .padding()
                             .frame(width: 220, height: 45)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 40)
-                                    .stroke(Color("lightBlue"), lineWidth: 10))
                             .background(Color("lightBlue"))
                             .cornerRadius(40)
                             .padding(.bottom, 32)
@@ -180,14 +178,32 @@ struct CanvaScreenView: View {
                     ink.color = UIColor(newValue)
                 } /// onChange
                 
-                    .popover(isPresented: $showingPopover,  content: {
-                            VStack {
-                                Text("Use the Apple Pencil to write")
-                                    .font(.system(size: 32, design: .rounded)).bold()
-                                    .foregroundColor(Color("darkBlue"))
-                                    .padding(64)
-                            }
-                        }) /// popOver
+                
+                VStack {
+                    Text("Use the Apple Pencil to write")
+                        .font(.system(size: 24, design: .rounded)).bold()
+                        .foregroundColor(Color("darkBlue"))
+                        .padding()
+                    Button(action: {
+                        showingPopover = false
+                    }, label: {
+                        Text("Got it")
+                            .font(.system(size: 16, design: .rounded)).bold()
+                            .foregroundColor(Color("darkBlue"))
+                            .padding()
+                            .frame(width: 100, height: 40)
+                            .background(Color("lightBlue"))
+                            .cornerRadius(40)
+                    })
+                }
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 32)
+                        .stroke(Color("lightBlue"), lineWidth: 6))
+                .background(.white)
+                .cornerRadius(32)
+                .shadow(radius: 10)
+                .opacity(showingPopover ? 1 : 0)
             } /// zstack
         } /// navigation stack
         .navigationBarBackButtonHidden()
